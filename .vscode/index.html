@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letícia Magalhães</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="profile">
+        <img src="./assets/icone-light.png" alt="Avatar" />
+        <p>@LetíciaMagalhães</p>
+      </div>
+      <!-- botão para fazer a troca entre light mode e dark mode -->
+      <div id="switch" onclick="toggleMode()">
+        <!-- onclick = para quando o usuario clicar no botão, nesse caso está sendo criado a função togglemode no js -->
+        <button></button>
+        <span> </span>
+      </div>
+      <ul>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/leticiavmagalhaes/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <!-- href é onde o link para outra pagina é adicionado, e target  -blank mantem o seu website aberto e abre o site do link como outra aba -->
+        </li>
+        <li>
+          <a href="https://github.com/LeticiaMagalheas" target="_blank"
+            >Github</a
+          >
+        </li>
+      </ul>
+      <!-- como chamar os icones do ion icon -->
+      <div id="social-links">
+        <a href="https://github.com/LeticiaMagalheas" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+          <!-- fazendo referencia da pagina com o a href, juntamente com a linkagem da imagem do ion icon -->
+        </a>
+        <a
+          href="https://www.linkedin.com/in/leticiavmagalhaes/"
+          target="_blank"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+      <footer>
+        Feito com carinho por Letícia
+        <a href="https://www.linkedin.com/in/leticiavmagalhaes/">LinkedIn</a>
+      </footer>
+    </div>
+    <!-- script para poder usar os icones do ioni icons para linkar as paginas desejadas -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

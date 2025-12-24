@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* faz com que todos elementos tenham margin e padding 0, quase como um reset do css*/
+  box-sizing: border-box;
+  /* para que a medida seja da borda*/
+}
+/* para tratar o light mode do site, ":root" por padrão para chamar o html inteiro*/
+:root {
+  --text-color: rgb(255, 255, 255);
+  /* define que tudo que eu for usar no site terá branco no lugar*/
+  --fundo-url: url(./assets/escuro.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-icone-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: rgb(0, 0, 0);
+  --fundo-url: url(./assets/claro.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-icone-url: url(./assets/sun.svg);
+}
+
+body {
+  /* DEFINIÇÃO DA IMAGEM DE FUNDO DO SITE
+
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center; (faz com que o eixo de cima (top) fique fixo, mas ainda com a imagem no centro real do fundo do site)
+  background-size: cover; (cobre todo o espaço disponivel)
+*/
+
+  /* junção de todas definições */
+  background: var(--fundo-url) no-repeat top center/cover;
+  height: 100vh;
+}
+body * {
+  font-family: "inter", sans-serif;
+  color: var(--text-color);
+  /* --text-color = variavel que crier para tratar o light mode do site*/
+}
+#container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px /*em cima */ auto /* aos lados */ 0px /* em baixo */;
+
+  /* margin utilizada para centralizar um container com proporções já definidas*/
+
+  /*border: 1px solid red;  borda permite visualizar o container*/
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 150px;
+  filter: drop-shadow(3px 5px 7px rgba(0, 0, 0, 2));
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 35px;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+#switch {
+  position: relative;
+  /* faz com que a posição absoluta (positon: absolute) do button se limite somente ao conatiner switch, para assim não vazar por todo o site*/
+  width: 64px;
+  margin: 4px auto;
+  /* alinha ao centro */
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-icone-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute; /* libera a utilização do z-index*/
+  z-index: 1;
+  /* z-index define em qual camada o container especifico ira ficar, neste caso seria 1, a frente do container span*/
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  /* tranlateY é utilizado para centralizar o contaiiner usando o eixo y, que seria de cima para baixo*/
+  animation: slide-back 0.2s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+.light #switch button {
+  /* ALTERAÇÃO PARA ANIMATION */
+  animation: slide-in 0.4s forwards;
+  /* forwards faz com que as propriedades do to (final da animação) sejam mantidas */
+
+  /* 
+  right: 0;
+  left: initial; */
+
+  /* faz com que o sol fique a esquerda*/
+}
+
+/* caixinha por onde o light mode e dark mode fazem a animação*/
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links - lista */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+/* pseudo-selector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social-links */
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --dark_url: url(./assets/icone-dark.png);
+  }
+
+  .light {
+    --light-url: url(./assets/icone-light.png);
+  }
+}
+
+/* animation no css */
+
+@keyframes slide-in {
+  /* define de onde começa a animação até onde termina, nesse caso o */
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
