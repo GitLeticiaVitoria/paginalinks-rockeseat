@@ -1,4 +1,4 @@
-<h1 align="center">Letícia Links</h1>
+<h1 align="center">Links</h1>
 
 <p align="center">
 Programa exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
@@ -18,7 +18,7 @@ Programa exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnolog
 <img width="100%">
 </p>
 
-## 🍰 Tecnologias
+## 💻 Tecnologias
 
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
@@ -27,6 +27,8 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - Git e Github;
 - Figma.
 
-## 🥧 Projeto
+## 🎬 Projeto
 
 O DevLinks é um agregador de links para usar como cartão de visitas online.
+
+## 📱 Layout
